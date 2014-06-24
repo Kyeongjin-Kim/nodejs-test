@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script src="https://cdn.socket.io/socket.io-1.0.4.js"></script>
+    <script>
+        window.onload = function() {
+
+            // 서버에 연결함.
+            var socket = io.connect();
+
+            // 서버로 부터 데이타를 받음.
+            socket.on("smart", function(data) {
+                alert(data);
+            });
+
+            // 서버로 데이타를 전송함.
+            document.getElementById("button").onclick = function() {
+
+                var text = document.getElementById("text").value;
+
+                socket.emit("rint", text);
+
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="text" id="text" />
+<input type="button" id="button" value="echo" />
+</body>
+</html>
