@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require("fs");
 var url = require("url");
 var port = process.env.PORT || 51234;
-var socketio = require("C:/Users/Kyungjin/AppData/Roaming/npm/node_modules/socket.io");
+var socketio = require("socket.io");
 
 //var port = 50002;
 var server = http.createServer(function(request, response) {
